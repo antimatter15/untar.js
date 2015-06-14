@@ -29,5 +29,6 @@ It's pretty minimal as far as APIs go, it exposes a single method `untar` which 
 
 ## Changelog
 
+* 0.2.3 — Fixing more decode bugs
 * 0.2.0 — Fixed a pretty major bug which led to decode errors from rounding to the wrong block. 
 * 0.1.0 — Initial Release
