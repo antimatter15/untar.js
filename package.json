@@ -1,0 +1,6 @@
+{
+	"name": "untar",
+	"version": "0.1.0",
+	"description": "Untar implementation salvaged from bitjs",
+	"main": "lib/untar.js"
+}
