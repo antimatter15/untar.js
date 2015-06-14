@@ -4,21 +4,23 @@ Here's a simple pure-javascript implementation of untar (it's mostly taken verba
 
 Here's a basic usage, it seems to work alright. 
 
-	var untar = require('../lib/untar.js')
-	var fs = require('fs')
+	var untar = require('untar.js');
+	var fs = require('fs');
 
-	untar.untar(fs.readFileSync(__dirname + '/' + 'test.tar')).forEach(function(file){
+	var file = fs.readFileSync(__dirname + '/' + 'test.tar');
+	untar.untar(file).forEach(function(file){
 	    console.log(file.filename, file.fileData.length);
 	})
 
 
 It's also possible to combine this with `gzip-js` in order to decode tarballs
 
-	var untar = require('../lib/untar.js')
-	var gzip = require('gzip-js')
-	var fs = require('fs')
+	var untar = require('untar.js');
+	var gzip = require('gzip-js');
+	var fs = require('fs');
 
-	var unzipped = gzip.unzip(fs.readFileSync(__dirname + '/' + 'test.tgz'));
+	var file = fs.readFileSync(__dirname + '/' + 'test.tgz');
+	var unzipped = gzip.unzip(file);
 	untar.untar(unzipped).map(function(file){
 		console.log(file.filename)
 	})
